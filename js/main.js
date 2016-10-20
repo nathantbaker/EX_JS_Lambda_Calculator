@@ -5,8 +5,10 @@ var userInputs = {
   input1: "",
   input2: ""
 }
+var n1 = userInputs.input1; // input number 1
+var n2 = userInputs.input2; // input number 2
 
-// Assign variables to HTML Elements
+// HTML Elements
 var number1 = document.getElementById("number1");
 var number2 = document.getElementById("number2");
 var addElement = document.getElementById("add");
@@ -16,81 +18,54 @@ var divideElement = document.getElementById("divide");
 var resultElement = document.getElementById("result");
 
 // Attach Event Listeners
-addElement.addEventListener("click", add);
-subtractElement.addEventListener("click", subtract);
-multiplyElement.addEventListener("click", multiply);
-divideElement.addEventListener("click", divide);
 number1.addEventListener("keyup", pushInputs);
 number2.addEventListener("keyup", pushInputs);
+addElement.addEventListener("click", function() {
+  doMath(n1, n2, add);
+});
+subtractElement.addEventListener("click", function() {
+  doMath(n1, n2, subtract);
+});
+multiplyElement.addEventListener("click", function() {
+  doMath(n1, n2, multiply);
+});
+divideElement.addEventListener("click", function() {
+  doMath(n1, n2, divide);
+});
 
 // If press a key while in number fields, save values
 function pushInputs() {
-  userInputs.input1 = number1.value;
-  userInputs.input2 = number2.value;
+  n1 = Number(number1.value);
+  n2 = Number(number2.value);
   console.log("Number 1:", number1.value);
   console.log("Number 2:", number2.value);
 }
 
-function doMath (num1, num2, targetFunction) {
-  return targetFunction(num1, num2);
+// doMath Function
+function doMath (num1, num2, mathOperation) {
+  console.log("doMath function ran");
+  // Form Validation
+  if (isNaN(n1) || isNaN(n2)) {
+    alert("You can only do math on numbers silly.");
+  } else {
+    resultElement.value = mathOperation(num1, num2);
+  }
 }
 
 // Math Functions
-
-function add () {
-  console.log("Add button pressed");
-  resultElement.value = Number(userInputs.input1) + Number(userInputs.input2);
+function add (num1, num2) {
+  console.log("add function ran");
+  return num1 + num2;
 }
-
-function subtract() {
-  console.log("Subtract button pressed");
-  resultElement.value = Number(userInputs.input1) - Number(userInputs.input2);
+function subtract (num1, num2) {
+  console.log("substract function ran");
+  return num1 - num2;
 }
-
-function multiply() {
-  console.log("Multiply button pressed");
-  resultElement.value = Number(userInputs.input1) * Number(userInputs.input2);
+function multiply (num1, num2) {
+  console.log("multiply function ran");
+  return num1 * num2;
 }
-
-function divide() {
-  console.log("Divide button pressed");
-  resultElement.value = Number(userInputs.input1) / Number(userInputs.input2);
+function divide (num1, num2) {
+  console.log("divide function ran");
+  return num1 / num2;
 }
-
-
-
-// When the user performs one of the operations, output the result to another DOM element of your choice.
-
-/*
-  Create a function that multiplies two numbers
-  passed in as arguments. Return the product.
- */
-
-
-/*
-  Create a function that adds two numbers
-  passed in as arguments. Return the sum.
- */
-
-
-/*
-  Create a function that subtracts two numbers
-  passed in as arguments. Return the difference.
- */
-
-
-/*
-  Create a function that divides two numbers
-  passed in as arguments. Return the quotient.
- */
-
-
-
-/*
-  Create a function that accepts three arguments.
-    1. First number
-    2. Second number
-    3. A function that performs an operation on them
-
-  Return the value of the operation.
- */
