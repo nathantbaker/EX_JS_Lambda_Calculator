@@ -1,9 +1,40 @@
 console.log("hello world");
 
-// Create 4 buttons to perform each of the basic mathematical functions (add, subtract, multiply, divide).
+// Attach Event Listeners to buttons
+document.getElementById("add").addEventListener("click", mathAdd);
+document.getElementById("subtract").addEventListener("click", mathSubtract);
+document.getElementById("multiply").addEventListener("click", mathMultiply);
+document.getElementById("divide").addEventListener("click", mathDivide);
 
-// In your JavaScript, put an event listener on each of the buttons.
-// Copy the code below an implement a basic calculator.
+// Object to Hold Inputs
+
+var userInputs = {
+  number1: "",
+  number2: ""
+}
+
+// Math Functions
+
+function mathAdd() {
+  console.log("Add button pressed");
+}
+
+function mathSubtract() {
+  console.log("Subtract button pressed");
+}
+
+function mathMultiply() {
+  console.log("Multiply Function pressed");
+}
+
+function mathDivide() {
+  console.log("Divide Function pressed");
+}
+
+
+
+
+
 // When the user performs one of the operations, output the result to another DOM element of your choice.
 
 /*
