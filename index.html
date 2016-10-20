@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lambda Expression Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+  </head>
+  <body>
+    <div class="container yellow">
+      <h1 class="text-center">Lambda Expression Calculator</h1>
+      <div class="row">
+        <form>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="number1" placeholder="Enter a Number">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="number2" placeholder="Enter a Second Number">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="math">
+        <div class="row text-center">
+          <div class="col-xs-3">
+            <button id="add" type="button" class="btn btn-primary">Add</button>
+          </div>
+          <div class="col-xs-3">
+            <button id="subtract" type="button" class="btn btn-primary">Subtract</button>
+          </div>
+          <div class="col-xs-3">
+            <button id="multiply" type="button" class="btn btn-primary">Multipy</button>
+          </div>
+          <div class="col-xs-3">
+            <button id="divide" type="button" class="btn btn-primary">Divide</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <form>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <input readonly type="text" class="form-control" id="result" placeholder="Result">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

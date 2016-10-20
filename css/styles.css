@@ -1,0 +1,21 @@
+.yellow {
+  background-color: #e8ead3;
+  border-radius: 0 0 10px 10px
+}
+
+#math {
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 2em;
+}
+
+#result {
+  height: 2.5em;
+  font-size: 1.5em;
+}
