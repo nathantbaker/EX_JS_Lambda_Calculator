@@ -1,5 +1,3 @@
-console.log("hello world");
-
 // Create Object to hold inputs
 var userInputs = {
   input1: "",
@@ -16,6 +14,7 @@ var subtractElement = document.getElementById("subtract");
 var multiplyElement = document.getElementById("multiply");
 var divideElement = document.getElementById("divide");
 var resultElement = document.getElementById("result");
+var clearElement = document.getElementById("clear");
 
 // Attach Event Listeners
 number1.addEventListener("keyup", pushInputs);
@@ -32,18 +31,20 @@ multiplyElement.addEventListener("click", function() {
 divideElement.addEventListener("click", function() {
   doMath(n1, n2, divide);
 });
+clearElement.addEventListener("click", function() { // Clears calculator
+  number1.value = "";
+  number2.value = "";
+  resultElement.value = "";
+});
 
-// If press a key while in number fields, save values
+// If you press a key while in number field, save the values
 function pushInputs() {
   n1 = Number(number1.value);
   n2 = Number(number2.value);
-  console.log("Number 1:", number1.value);
-  console.log("Number 2:", number2.value);
 }
 
 // doMath Function
 function doMath (num1, num2, mathOperation) {
-  console.log("doMath function ran");
   // Form Validation
   if (isNaN(n1) || isNaN(n2)) {
     alert("You can only do math on numbers silly.");
@@ -54,18 +55,14 @@ function doMath (num1, num2, mathOperation) {
 
 // Math Functions
 function add (num1, num2) {
-  console.log("add function ran");
   return num1 + num2;
 }
 function subtract (num1, num2) {
-  console.log("substract function ran");
   return num1 - num2;
 }
 function multiply (num1, num2) {
-  console.log("multiply function ran");
   return num1 * num2;
 }
 function divide (num1, num2) {
-  console.log("divide function ran");
   return num1 / num2;
 }
