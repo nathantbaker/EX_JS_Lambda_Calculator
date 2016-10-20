@@ -1,37 +1,61 @@
 console.log("hello world");
 
-// Attach Event Listeners to buttons
-document.getElementById("add").addEventListener("click", mathAdd);
-document.getElementById("subtract").addEventListener("click", mathSubtract);
-document.getElementById("multiply").addEventListener("click", mathMultiply);
-document.getElementById("divide").addEventListener("click", mathDivide);
-
-// Object to Hold Inputs
-
+// Create Object to hold inputs
 var userInputs = {
-  number1: "",
-  number2: ""
+  input1: "",
+  input2: ""
+}
+
+// Assign variables to HTML Elements
+var number1 = document.getElementById("number1");
+var number2 = document.getElementById("number2");
+var addElement = document.getElementById("add");
+var subtractElement = document.getElementById("subtract");
+var multiplyElement = document.getElementById("multiply");
+var divideElement = document.getElementById("divide");
+var resultElement = document.getElementById("result");
+
+// Attach Event Listeners
+addElement.addEventListener("click", add);
+subtractElement.addEventListener("click", subtract);
+multiplyElement.addEventListener("click", multiply);
+divideElement.addEventListener("click", divide);
+number1.addEventListener("keyup", pushInputs);
+number2.addEventListener("keyup", pushInputs);
+
+// If press a key while in number fields, save values
+function pushInputs() {
+  userInputs.input1 = number1.value;
+  userInputs.input2 = number2.value;
+  console.log("Number 1:", number1.value);
+  console.log("Number 2:", number2.value);
+}
+
+function doMath (num1, num2, targetFunction) {
+  return targetFunction(num1, num2);
 }
 
 // Math Functions
 
-function mathAdd() {
+function add () {
   console.log("Add button pressed");
+  resultElement.value = Number(userInputs.input1) + Number(userInputs.input2);
 }
 
-function mathSubtract() {
+function subtract() {
   console.log("Subtract button pressed");
+  resultElement.value = Number(userInputs.input1) - Number(userInputs.input2);
 }
 
-function mathMultiply() {
-  console.log("Multiply Function pressed");
+function multiply() {
+  console.log("Multiply button pressed");
+  resultElement.value = Number(userInputs.input1) * Number(userInputs.input2);
 }
 
-function mathDivide() {
-  console.log("Divide Function pressed");
+function divide() {
+  console.log("Divide button pressed");
+  resultElement.value = Number(userInputs.input1) / Number(userInputs.input2);
 }
-
-
 
 
 
